@@ -13,3 +13,6 @@ python manage.py migrate
 
 echo "🔹 Собираем статику..."
 python manage.py collectstatic --noinput
+
+echo "🔹 Запускаем сервер Gunicorn..."
+gunicorn resume_site.wsgi:application --bind 0.0.0.0:8000
